@@ -1,0 +1,10 @@
+Nama: 
+Almanik Balingga
+Muhammad Aziz Pratama
+Ghina Khoerunnisa
+
+link github : https://github.com/llassingan/H8_001/blob/main/Final%20Project/PYTN_KampusMerdeka_FP3_Almanik%20Balingga.ipynb
+ - notebook : PYTN_KampusMerdeka_FP3_Almanik Balingga.ipynb
+ - source code web : H8FinalProj
+
+link website heroku : https://h8-model-finalproject.herokuapp.com/
