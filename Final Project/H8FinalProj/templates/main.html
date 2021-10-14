@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Death Event Prediction</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8" id="main" >    
+            <center><img src="{{url_for('static',filename ='src/AppIcon.jpg')}}" width ="200px" height="200px" alt=""></center>
+            <center><h4>Heart Disease Death Event Prediction</h4></center>
+            <center>
+            <form action="{{ url_for('predict') }}" method="post">
+                <div class="row mt-3 form">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="text" class="form-control" name="age" placeholder="ex : 45" required="required">
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="creatinin">Creatinine Phosphokinase</label>
+                            <input type="text" class="form-control" name="creatinin" placeholder="ex : 525" required="required">
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ejection">Ejection Fraction</label>
+                            <input type="text" class="form-control" name="ejection" placeholder="ex : 15" required="required">
+                          </div>
+                    </div>
+                    
+                    
+                    </div>
+                    <div class="row mt-3 form">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="platelets">Platelets</label>
+                                <input type="text" class="form-control" name="platelets" placeholder="ex : 250001" required="required">
+                              </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="serumcrat">Serum Creatinin</label>
+                                <input type="text" class="form-control" name="serumcreat" placeholder="ex : 1.5" required="required">
+                              </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="serumsod">Serum Sedium</label>
+                                <input type="text" class="form-control" name="serumsod" placeholder="ex : 130" required="required">
+                              </div>
+                        </div>
+
+                        
+                        </div>
+
+                        <div class="row mt-3 form">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="time">Time</label>
+                                    <input type="text" class="form-control" name="time" placeholder="ex : 5" required="required">
+                                  </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="anemia">Anemia</label>
+                                    <input type="text" class="form-control" name="anemia" placeholder="ex : 0" required="required">
+                                    <small>Yes : 1, No : 0</small>
+                                  </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="diabetes">Diabetes</label>
+                                    <input type="text" class="form-control" name="diabetes" placeholder="ex : 1" required="required">
+                                    <small>Yes : 1, No : 0</small>
+                                  </div>
+                            </div>
+                            
+                          
+                        </div>
+                            <div class="row mt-3 form">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="highbloodpress">High Blood Pressure</label>
+                                        <input type="text" class="form-control" name="highbloodpress" placeholder="ex : 0" required="required">
+                                        <small>Yes : 1, No : 0</small>
+                                      </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="sex">Sex</label>
+                                        <input type="text" class="form-control" name="sex" placeholder="ex : 1" required="required">
+                                        <small>Male : 1, Female : 0</small>
+                                      </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="smoking">Smoking</label>
+                                        <input type="text" class="form-control" name="smoking" placeholder="ex : 0" required="required">
+                                        <small>Yes : 1, No : 0</small>
+                                      </div>
+                                </div>
+                               
+                                </div>
+                
+                <div class="mt-3">
+                 <button type="submit" class="btn btn-block btn-large">Predict</button>
+                </div>
+            </form>
+            <div class="row mt-3">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <center>
+                        <p class="message">{{ prediction_text }}</p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+                
+
+            </div>
+            
+            </center>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
